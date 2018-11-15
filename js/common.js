@@ -28,3 +28,25 @@ $(document).ajaxStop(function() {
         NProgress.done();
     }, 5000);
 });
+
+
+
+
+// jquery 入口函数, 等待 dom 结构加载完成之后, 就执行
+$(function() {
+
+    // 公共的功能
+    // 功能1: 导航点击切换功能
+    $('.lt_aside .category').click(function() {
+        $(this).next().stop().slideToggle();
+    });
+
+    // 功能2: 左侧菜单列表切换功能
+    $('.lt_topbar .icon_left').click(function() {
+        $('.lt_aside').toggleClass(".hidemenu");
+        $('.lt_main').toggleClass(".hidemenu");
+    });
+
+
+
+});
