@@ -57,8 +57,8 @@ $(function() {
 
 //   点击登录按钮提交校验
   $("#form").on("success.form.bv", function(e){
-    var validator = $("#form").data('bootstrapValidator');
-    console.log(validator);
+    // var validator = $("#form").data('bootstrapValidator');
+    // console.log(validator);
     //阻止表单的默认提交
     e.preventDefault();
     //使用ajax进行提交

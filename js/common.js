@@ -26,7 +26,7 @@ $(document).ajaxStop(function() {
     setTimeout(function(){
         // 请求都完成后关闭进度条
         NProgress.done();
-    }, 5000);
+    }, 1000);
 });
 
 
