@@ -10,6 +10,15 @@ ul {
     padding: 0;
     list-style: none;
 }
+.red {
+    color: #e92322;
+}
+/* 表格内容居中 */
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
+}
 
 /* 登录页面公共样式-------------------------------------- */
 .body_bg {
@@ -26,6 +35,9 @@ ul {
 }
 
 /* 首页公共样式------------------------------------------------- */
+.mt_20 {
+    margin-top: 20px;
+}
 .lt_aside {
     width: 180px;
     height: 100%;
@@ -88,8 +100,6 @@ ul {
 }
 
 .lt_main {
-    height: 1000px;
-    background-color: pink;
     padding-left: 180px;
     padding-top: 50px;
     transition: all 1s;
@@ -104,6 +114,7 @@ ul {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 998;
     padding-left: 180px;
     transition: all 1s;
 }
@@ -118,4 +129,12 @@ ul {
     font-size: 20px;
     text-align: center;
     line-height: 50px;
+}
+
+
+/* 图表容器 */
+.echarts_left,
+.echarts_right {
+    height: 400px;
+    width: 48%;
 }

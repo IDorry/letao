@@ -27,7 +27,7 @@
         <!-- 导航 -->
         <div class="nav">
             <ul>
-                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li><a href="user.html" class="current"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li>
                     <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
                     <div class="child">
@@ -54,17 +54,37 @@
             <!-- 路径导航 -->
             <ol class="breadcrumb mt_20">
                 <li><a href="index.html">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">用户管理</li>
             </ol>
-            <!-- 图表 -->
-            <!-- 准备一个有宽高的容器 -->
-            <div class="lt_content">
-                <!-- 左侧柱状图 -->
-                <div class="echarts_left pull-left"></div>
-                <!-- 右侧饼状图 -->
-                <div class="echarts_right pull-right"></div>
-            </div>
 
+            <!-- 用户表格 -->
+            <div class="lt_content">
+                <!-- 表格 -->
+                <!-- table(基础表格样式) table-bordered(添加边框) table-hover(添加hover效果) -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>11</td>
+                            <td>111</td>
+                            <td>1111</td>
+                            <td>
+                                <button class="btn btn-danger">禁用</button>
+                                <button class="btn btn-primary">启用</button>                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
 
@@ -90,6 +110,28 @@
             </div>
         </div>      
     </div>
+
+    <!-- 准备模板 
+    1. type="text/template"
+     2. type="text/html"
+     都是标记当成 script 标签中存储的是 html 模板
+    -->
+    <script type="text/html" id="tmp">
+        {{ each rows v i }}
+            <tr>
+                <td>1</td>
+                <td>11</td>
+                <td>111</td>
+                <td>1111</td>
+                <td>
+                    <button class="btn btn-danger">禁用</button>
+                    <button class="btn btn-primary">启用</button>                                
+                </td>
+            </tr>
+        {{ /each }}
+    
+    </script>
+
 
 
    
