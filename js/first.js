@@ -4,7 +4,7 @@ $(function() {
     var currentPage = 1;
     var pageSize = 5;
 
-    // 一进入页面就发送请求
+    //1. 一进入页面就发送请求
     render();
     function render() {
         $.ajax({
@@ -35,4 +35,59 @@ $(function() {
             }
         })
     }
+
+    // 2. 点击添加按钮，显示添加模态框
+    $('#addBtn').click(function() {
+
+        // 显示添加模态框
+        $('#addModal').modal("show");
+    });
+
+    // 3. 表单校验功能
+    $('#form').bootstrapValidator({
+        //   配置小图标
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        // 配置字段列表
+        fields: {
+            categoryName: {
+                // 校验规则：
+                validators: {
+                    // 非空：
+                    notEmpty: {
+                        message: "请输入一级分类"
+                    }
+                }
+            }
+        }
+    });
+
+
+    // 4. 阻止默认的提交，通过ajax提交
+    $("#form").on('success.form.bv', function (e) {
+        e.preventDefault();
+        //使用ajax提交逻辑
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "/category/addTopCategory",
+            data: $('#form').serialize(),
+            success: function( info ) {
+                if( info.success ){
+                    // 添加成功,关闭模态框，重新渲染第一页
+                    $('#addModal').modal("hide");
+                    currentPage = 1;
+                    render( currentPage );
+
+                    // 重置表单内容和状态
+                    $('#form').data("bootstrapValidator").resetForm(true);
+
+                }
+            }
+        });
+    });
+
 })
