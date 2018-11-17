@@ -71,6 +71,13 @@ $(function() {
         // 点击分类数据，将文本添加到按钮上
         var txt = $(this).text();
         $('#dropdownText').text( txt );
+
+        // 获取id，设置给隐藏域
+        var id = $(this).data("id");
+        $('[name="categoryId"]').val( id );
+        // $('[name="categoryId"]').trigger("input");        
+        // 或者手动将校验状态改成校验成功
+        $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
     });
 
 
@@ -86,8 +93,57 @@ $(function() {
           var result = data.result;
           var picUrl = result.picAddr;
           $('#imgBox img').attr("src", picUrl);
+
+
+        //   将src路径，实时设置给隐藏域
+        $('[name="brandLogo"]').val(picUrl);
+
+        // 手动将校验状态改成校验成功
+        $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID");
         }
-  });
+    });
+
+
+    //   5. 配置表单校验
+    $('#form').bootstrapValidator({
+
+        // 配置排除项，默认会排出隐藏域，设置不排除
+        excluded: [],
+
+        //   设置小图标
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        // 校验字段
+        fields: {
+            categoryId: {
+                validators: {
+                    notEmpty: {
+                        message: "请选择一级分类"
+                    }
+                }
+            },
+            brandName: {
+                validators: {
+                    notEmpty: {
+                        message: "请输入二级分类名称"
+                    }
+                }
+            },
+
+            brandLogo: {
+                validators: {
+                    notEmpty: {
+                        message: "请选择图片"
+                    }
+                }
+            }
+        }
+    });
+
 
 
 });
