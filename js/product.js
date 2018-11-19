@@ -245,6 +245,9 @@ $(function(){
                     // 重置下拉按钮 和 图片内容
                     $('#dropdownText').text("请选择二级分类");
                     $('#imgBox img').remove();
+
+                    // 重置数组
+                    picArr = [];
                 }
             }
         });
