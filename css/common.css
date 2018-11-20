@@ -1,0 +1,150 @@
+html,body {
+    width: 100%;
+    height: 100%;
+}
+.lt_container {
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    padding-top: 45px;
+    padding-bottom: 55px;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img {
+    display: block;
+    width: 100%;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 头部 */
+.lt_header {
+    height: 45px;
+    width: 100%;
+    background-color: #006699;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 45px;
+
+}
+.lt_header h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: center;
+}
+.lt_header a {
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+}
+.lt_header .icon_left {
+    left: 0;
+
+}
+.lt_header .icon_right {
+    right: 0;
+}
+
+
+/* 底部 */
+.lt_footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 55px;
+    width: 100%;
+    background-color: #006699;
+}
+.lt_footer ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.lt_footer ul li p {
+    margin: 0;
+    color: #fff;
+}
+.lt_footer ul li a {
+    display: block;
+    color: #fff;
+    padding-top: 8px;
+}
+.lt_footer ul li a.current {
+    color: orange;
+}
+.lt_footer ul li a.current p {
+    color: orange;
+}
+
+
+.lt_main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+/* 公共的搜索框模块 */
+.lt_search {
+    padding: 10px;
+    position: relative;
+}
+.lt_search .search_input {
+    height: 34px;
+    font-size: 12px;
+    margin: 0;
+    border: 1px solid #479FFF;
+    border-radius: 5px;
+}
+.lt_search .search_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 0 5px 5px 0;    
+}
+
+
+
+/*公共的产品区域 */
+.lt_product {
+    padding: 10px;
+    text-align: center;
+}
+.lt_product .lt_product_item {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.lt_product .lt_product_item:nth-child(2n-1) {
+    float: left;
+}
+.lt_product .lt_product_item:nth-child(2n) {
+    float: right;
+}
+.lt_product .lt_product_item .price {
+    color: #e92322;
+}
+.lt_product .lt_product_item .oldPrice {
+    text-decoration: line-through;
+}
