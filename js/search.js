@@ -68,6 +68,7 @@ render();
         // 转成jsonStr，存储到本地
         // 重新渲染页面
     $('.search_btn').click(function(){
+
         var key = $('.search_input').val().trim();
         
         if( key.length === "" ){
@@ -96,7 +97,7 @@ render();
 
         $('.search_input').val("");
 
-        location.href = "searchList.html";
+        // location.href = "searchList.html";
     });
 
 
